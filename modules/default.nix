@@ -1,0 +1,7 @@
+{ self, ... }: {
+  flake = {
+    nixosModules = {
+      
+    };
+  };
+}

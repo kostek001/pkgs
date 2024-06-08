@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 90a9974..a2b75aa 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,6 +39,8 @@ endif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+ find_package(ECM REQUIRED NO_MODULE)
+ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_MODULE_PATH})
+ 
++include(ECMQmlModule)
++
+ if(ECM_VERSION_MAJOR EQUAL 6)
+   find_package(Plasma REQUIRED)
+   find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Package)
