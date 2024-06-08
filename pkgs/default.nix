@@ -1,10 +1,14 @@
 { inputs, ... }: {
   imports = [ inputs.flake-parts.flakeModules.easyOverlay ];
 
-  perSystem = { system, pkgs, ... }: {
-    _module.args.pkgs = import inputs.nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
+  perSystem = { config, system, pkgs, ... }: {
+    # _module.args.pkgs = import inputs.nixpkgs {
+    #   inherit system;
+    #   config.allowUnfree = true;
+    # };
+
+    overlayAttrs = {
+      inherit (config.packages) wallpaper-engine-kde-plugin alvr slimevr adb-auto-forward ytermusic;
     };
 
     packages = with pkgs; {
