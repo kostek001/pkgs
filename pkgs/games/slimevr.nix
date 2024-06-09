@@ -1,4 +1,10 @@
-{ appimageTools, fetchurl, glib, writeText }:
+{ appimageTools
+, fetchurl
+, glib
+, writeText
+, lib
+}:
+
 let
   name = "slimevr";
   version = "0.12.1";
@@ -51,4 +57,11 @@ appimageTools.wrapAppImage {
     install -m 444 -D ${src}/usr/share/icons/hicolor/256x256@2/apps/slimevr.png \
       $out/share/icons/hicolor/256x256@2/apps/dev.slimevr.SlimeVR.png
   '';
+
+  meta = with lib; {
+    description = "Server app for SlimeVR ecosystem";
+    homepage = "https://github.com/SlimeVR/SlimeVR-Server";
+    changelog = "https://github.com/SlimeVR/SlimeVR-Server/releases/tag/v${version}";
+    license = licenses.mit;
+  };
 }

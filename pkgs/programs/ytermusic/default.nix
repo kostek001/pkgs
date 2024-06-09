@@ -36,6 +36,5 @@ rustPlatform.buildRustPackage rec {
     description = "YTerMusic";
     homepage = "https://github.com/ccgauche/ytermusic";
     license = licenses.asl20;
-    maintainers = [ ];
   };
 }

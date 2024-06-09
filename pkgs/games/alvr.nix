@@ -1,4 +1,10 @@
-{ buildFHSEnv, fetchzip, writeText, fetchurl }:
+{ buildFHSEnv
+, fetchzip
+, writeText
+, fetchurl
+, lib
+}:
+
 let
   name = "alvr";
   version = "20.8.1";
@@ -51,4 +57,12 @@ buildFHSEnv {
   '';
 
   runScript = "${src}/bin/alvr_dashboard";
+
+  meta = with lib; {
+    description = "Stream VR games from your PC to your headset via Wi-Fi";
+    homepage = "https://github.com/alvr-org/ALVR/";
+    changelog = "https://github.com/alvr-org/ALVR/releases/tag/v${version}";
+    license = licenses.mit;
+    mainProgram = "alvr";
+  };
 }

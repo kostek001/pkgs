@@ -10,6 +10,7 @@
 , lz4
 , fribidi
 , python3
+, lib
 }:
 
 let
@@ -77,4 +78,10 @@ stdenv.mkDerivation rec {
       --replace "/usr/share" "$out/share" \
       --replace "python3" "${pythonPath}/bin/python3"
   '';
+
+  meta = with lib; {
+    description = "A wallpaper plugin integrating wallpaper engine into kde wallpaper setting.";
+    homepage = "https://github.com/catsout/wallpaper-engine-kde-plugin";
+    license = licenses.gpl2;
+  };
 }

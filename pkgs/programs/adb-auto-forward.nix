@@ -2,6 +2,7 @@
 , fetchFromGitHub
 , android-tools
 , coreutils
+, lib
 }:
 
 python3Packages.buildPythonApplication rec {
@@ -25,4 +26,11 @@ python3Packages.buildPythonApplication rec {
   ];
 
   doCheck = false;
+
+  meta = with lib; {
+    description = "Automatically forward TCP ports using ADB on device connection";
+    homepage = "https://github.com/kostek001/adb-auto-forward";
+    changelog = "https://github.com/kostek001/adb-auto-forward/releases/tag/v${version}";
+    license = licenses.gpl3;
+  };
 }
