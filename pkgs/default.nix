@@ -1,17 +1,13 @@
 { inputs, ... }: {
   imports = [ inputs.flake-parts.flakeModules.easyOverlay ];
 
-  perSystem = { config, system, pkgs, ... }: {
-    # _module.args.pkgs = import inputs.nixpkgs {
-    #   inherit system;
-    #   config.allowUnfree = true;
-    # };
-
+  perSystem = { config, pkgs, ... }: {
     overlayAttrs = {
-      inherit (config.packages) wallpaper-engine-kde-plugin alvr slimevr adb-auto-forward ytermusic;
+      inherit (config.packages) plasma-smart-video-wallpaper-reborn wallpaper-engine-kde-plugin alvr slimevr adb-auto-forward ytermusic;
     };
 
     packages = with pkgs; {
+      plasma-smart-video-wallpaper-reborn = callPackage ./desktop/plasma/plasma-smart-video-wallpaper-reborn { };
       wallpaper-engine-kde-plugin = callPackage ./desktop/plasma/wallpaper-engine-kde-plugin { };
 
       alvr = callPackage ./games/alvr.nix { };
