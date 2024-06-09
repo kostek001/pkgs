@@ -1,14 +1,14 @@
 { appimageTools, fetchurl, glib, writeText }:
 let
   name = "slimevr";
-  version = "0.12.0-rc.4";
+  version = "0.12.1";
 
   src = appimageTools.extract {
     inherit name version;
 
     src = fetchurl {
       url = "https://github.com/SlimeVR/SlimeVR-Server/releases/download/v${version}/SlimeVR-amd64.appimage";
-      hash = "sha256-olMoz1tAjtTTAgfM5qFbFsCTKn29ni0QeXh4sbsmFMs=";
+      hash = "sha256-AyXL1oVmbEmGbAXQT4cWKvAHM+fkK2DfMSrizwuYRbU=";
     };
 
     # Update glib in appimage, otherwise java will crash
