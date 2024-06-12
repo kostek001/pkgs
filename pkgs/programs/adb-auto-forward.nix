@@ -7,13 +7,13 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "adb-auto-forward";
-  version = "0.1.0";
+  version = "0.1.1";
 
   src = fetchFromGitHub {
     owner = "kostek001";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-JFZmCssyIYGl5BHVCh8yTtbpH68QG2+FqfBA6fH+uUU=";
+    hash = "sha256-gcbPjSAORHypy6WkQ32GU8EZJrPrclx7gE2ABb6kYvI=";
   };
 
   dependencies = with python3Packages; [
