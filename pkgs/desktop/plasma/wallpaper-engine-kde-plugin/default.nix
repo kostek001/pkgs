@@ -14,24 +14,18 @@
 }:
 
 let
-  wallpaper-scene-renderer = fetchFromGitHub {
-    owner = "catsout";
-    repo = "wallpaper-scene-renderer";
-    rev = "eeaff7036526c87cb7dd46c849a5e9bd8e26e5f7";
-    hash = "sha256-qE9K//tNRdFKEHV7liQemERta45cgd/jc5CNkAI6e5c=";
-    fetchSubmodules = true;
-  };
   pythonPath = python3.withPackages (p: [ p.websockets ]);
 in
 stdenv.mkDerivation rec {
   pname = "wallpaper-engine-kde-plugin";
-  version = "96230de92f1715d3ccc5b9d50906e6a73812a00a";
+  version = "1e604105c586c7938c5b2c19e3dc8677b2eb4bb4";
 
   src = fetchFromGitHub {
     owner = "catsout";
     repo = pname;
     rev = version;
-    hash = "sha256-KDNL6PNGSkpA+Zq0jzBoodJcbskAKR2onY+kYjgzEG8=";
+    hash = "sha256-bKGQxyS8gUi+37lODLVHphMoQwLKZt/hpSjR5MN+5GA=";
+    fetchSubmodules = true;
   };
 
   patches = [ ./cmake.patch ];
@@ -47,18 +41,13 @@ stdenv.mkDerivation rec {
     pkg-config
   ];
 
-  postPatch = ''
-    rm -r src/backend_scene
-    ln -s ${wallpaper-scene-renderer} src/backend_scene
-  '';
-
   propagatedBuildInputs = [
     qt6.qtbase
     qt6.qtdeclarative
     qt6.qtwebsockets
     qt6.qtwebchannel
 
-    vulkan-headers    
+    vulkan-headers
     mpv
     libass
     lz4
