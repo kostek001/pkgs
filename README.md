@@ -18,6 +18,8 @@ Packages:
 - [`ytermusic`](https://github.com/ccgauche/ytermusic) [commit](https://github.com/ccgauche/ytermusic/tree/6f9384924d17dc2626b5f0f0e1585cd6f6830073)
 - [`adb-auto-forward`](https://github.com/kostek001/adb-auto-forward) v0.1.1
 
+For `wallpaper-engine-kde-plugin` and `plasma-smart-video-wallpaper-reborn` packages add `qt6.qtwebsockets`, `qt6.qtmultimedia` packages too.
+
 ## Usage
 
 Add `github:kostek001/nixos-pkgs` to your flake inputs:
@@ -32,7 +34,12 @@ inputs = {
 };
 ```
 
-### Apply NixOS overlay
+### Add packages
+
+With:
+`inputs.kostek001-pkgs.packages.${pkgs.system}.<package>`
+
+or apply `nixpkgs` overlay
 
 ```nix
 { inputs, ... }:
