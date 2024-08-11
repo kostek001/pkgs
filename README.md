@@ -1,6 +1,6 @@
-# nixos-pkgs
+# kostek001-pkgs
 
-Collection of packages and modules in a flake.
+Collection of Nix packages and modules in a flake.
 
 ## Features
 
@@ -24,13 +24,13 @@ Packages:
 
 ## Usage
 
-Add `github:kostek001/nixos-pkgs` to your flake inputs:
+Add `github:kostek001/pkgs` to your flake inputs:
 
 ```nix
 inputs = {
   # ...
   kostek001-pkgs = {
-    url = "github:kostek001/nixos-pkgs";
+    url = "github:kostek001/pkgs";
     # Only if using nixpkgs-unstable
     inputs.nixpkgs.follows = "nixpkgs";
   };
