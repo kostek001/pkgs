@@ -7,6 +7,7 @@
     };
 
     packages = with pkgs; {
+      kde-material-you-colors = callPackage ./desktop/plasma/kde-material-you-colors { };
       plasma-smart-video-wallpaper-reborn = callPackage ./desktop/plasma/plasma-smart-video-wallpaper-reborn { };
       wallpaper-engine-kde-plugin = callPackage ./desktop/plasma/wallpaper-engine-kde-plugin { };
 
