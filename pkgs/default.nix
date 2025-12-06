@@ -11,11 +11,7 @@
       plasma-smart-video-wallpaper-reborn = callPackage ./desktop/plasma/plasma-smart-video-wallpaper-reborn { };
       wallpaper-engine-kde-plugin = callPackage ./desktop/plasma/wallpaper-engine-kde-plugin { };
 
-      alvr = callPackage ./games/alvr.nix { };
-      slimevr = callPackage ./games/slimevr.nix { };
-
       adb-auto-forward = callPackage ./programs/adb-auto-forward.nix { };
-      ytermusic = callPackage ./programs/ytermusic { };
     };
   };
 }
