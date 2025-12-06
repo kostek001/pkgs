@@ -16,6 +16,9 @@ python3Packages.buildPythonApplication rec {
     hash = "sha256-gcbPjSAORHypy6WkQ32GU8EZJrPrclx7gE2ABb6kYvI=";
   };
 
+  pyproject = true;
+  build-system = [ python3Packages.setuptools ];
+
   dependencies = with python3Packages; [
     pyudev
   ];
